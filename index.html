@@ -3,29 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Elif Parıldar — Psychology + Behavioral Data + Consumer Decision Science. Projects, skills, and contact." />
+  <meta name="description" content="Elif Parıldar — Psychology + Behavioral Data + Consumer Decision Science. Projects, skills, certificates, and contact." />
   <title>Elif Parıldar | Psychology × Behavioral Data</title>
 
   <!-- Open Graph -->
   <meta property="og:title" content="Elif Parıldar | Psychology × Behavioral Data" />
-  <meta property="og:description" content="Consumer decision-making, experiments, and data-driven insights." />
+  <meta property="og:description" content="Consumer decision-making, experiments, data-driven insights, and training." />
   <meta property="og:type" content="website" />
 
   <style>
     :root{
-      --bg: #0b1020;
+      --bg: #070a14;
+      --bg2:#0b1020;
       --card: rgba(255,255,255,.06);
-      --card2: rgba(255,255,255,.08);
+      --card2: rgba(255,255,255,.09);
       --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
-      --muted2: rgba(255,255,255,.55);
+      --muted: rgba(255,255,255,.72);
+      --muted2: rgba(255,255,255,.56);
       --line: rgba(255,255,255,.12);
       --accent: #7c83fd;
       --accent2:#22c55e;
-      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --accent3:#f472b6;
+      --shadow: 0 20px 70px rgba(0,0,0,.55);
       --radius: 18px;
-      --radius2: 24px;
-      --max: 1050px;
+      --radius2: 26px;
+      --max: 1100px;
       --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
       --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
@@ -37,45 +39,68 @@
       font-family: var(--sans);
       color: var(--text);
       background:
-        radial-gradient(1200px 600px at 10% 10%, rgba(124,131,253,.28), transparent 60%),
-        radial-gradient(900px 500px at 85% 20%, rgba(34,197,94,.18), transparent 60%),
-        radial-gradient(900px 600px at 50% 100%, rgba(124,131,253,.14), transparent 60%),
-        linear-gradient(180deg, #070a14 0%, var(--bg) 60%, #060815 100%);
+        radial-gradient(1200px 650px at 8% 12%, rgba(124,131,253,.32), transparent 60%),
+        radial-gradient(900px 520px at 86% 18%, rgba(244,114,182,.20), transparent 62%),
+        radial-gradient(900px 620px at 55% 105%, rgba(34,197,94,.18), transparent 62%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg2) 60%, #060815 100%);
       overflow-x:hidden;
     }
 
+    /* subtle animated grain */
+    body:before{
+      content:"";
+      position:fixed; inset:0;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
+      opacity:.06;
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
+
     a{color:inherit; text-decoration:none}
-    a:hover{opacity:.92}
+    a:hover{opacity:.95}
     .wrap{max-width:var(--max); margin:0 auto; padding:24px}
 
     /* Top nav */
     .nav{
       position:sticky; top:0; z-index:50;
-      backdrop-filter: blur(12px);
-      background: rgba(8,10,18,.55);
+      backdrop-filter: blur(14px);
+      background: rgba(8,10,18,.58);
       border-bottom: 1px solid var(--line);
     }
     .nav .inner{
       max-width:var(--max); margin:0 auto; padding:14px 24px;
-      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
     }
+
     .brand{
-      display:flex; align-items:center; gap:12px; min-width:220px;
+      display:flex; align-items:center; gap:12px;
+      min-width: 240px;
     }
     .logo{
-      width:34px; height:34px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(124,131,253,1), rgba(34,197,94,.9));
-      box-shadow: 0 10px 30px rgba(124,131,253,.25);
+      width:36px; height:36px; border-radius:14px;
+      background: conic-gradient(from 210deg, rgba(124,131,253,1), rgba(34,197,94,.95), rgba(244,114,182,.95), rgba(124,131,253,1));
+      box-shadow: 0 12px 34px rgba(124,131,253,.22);
+      position:relative;
     }
-    .brand .name{font-weight:750; letter-spacing:.2px}
-    .brand .tag{display:block; font-size:12px; color:var(--muted2); margin-top:2px}
+    .logo:after{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:14px;
+      background: linear-gradient(135deg, rgba(255,255,255,.22), transparent 40%, rgba(255,255,255,.10));
+      pointer-events:none;
+      mix-blend-mode: overlay;
+    }
 
-    .links{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .brand .name{font-weight:820; letter-spacing:.2px; line-height:1}
+    .brand .tag{display:block; font-size:12px; color:var(--muted2); margin-top:4px}
+
+    .links{display:flex; gap:10px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
     .links a{
       font-size:14px; color:var(--muted);
       padding:8px 10px; border-radius:12px;
     }
     .links a:hover{background: rgba(255,255,255,.06); color: var(--text)}
+
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:10px;
       padding:10px 14px;
@@ -84,17 +109,17 @@
       background: rgba(255,255,255,.07);
       color: var(--text);
       box-shadow: 0 10px 30px rgba(0,0,0,.25);
-      font-weight:650;
+      font-weight:720;
       font-size:14px;
       transition: transform .15s ease, background .15s ease, border-color .15s ease;
       cursor:pointer;
     }
-    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.2)}
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22)}
     .btn.primary{
-      background: linear-gradient(135deg, rgba(124,131,253,.95), rgba(34,197,94,.72));
+      background: linear-gradient(135deg, rgba(124,131,253,.95), rgba(244,114,182,.55), rgba(34,197,94,.55));
       border-color: rgba(255,255,255,.18);
     }
-    .btn.primary:hover{filter:saturate(1.05) brightness(1.02)}
+    .btn.primary:hover{filter:saturate(1.06) brightness(1.02)}
     .btn .dot{
       width:8px; height:8px; border-radius:999px;
       background: rgba(255,255,255,.95);
@@ -103,10 +128,10 @@
 
     /* Hero */
     .hero{
-      padding:46px 0 18px;
+      padding:48px 0 18px;
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap:26px;
+      grid-template-columns: 1.25fr .75fr;
+      gap:22px;
       align-items:stretch;
     }
     .panel{
@@ -114,8 +139,22 @@
       border: 1px solid var(--line);
       border-radius: var(--radius2);
       box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .panel:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 240px at 20% 10%, rgba(124,131,253,.22), transparent 60%),
+        radial-gradient(600px 240px at 85% 0%, rgba(244,114,182,.16), transparent 60%),
+        radial-gradient(700px 240px at 50% 110%, rgba(34,197,94,.14), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
     }
     .hero-left{padding:28px}
+    .hero-right{padding:22px}
+
     .kicker{
       display:inline-flex; gap:10px; align-items:center;
       color: var(--muted);
@@ -124,6 +163,8 @@
       border: 1px solid var(--line);
       padding:8px 12px;
       border-radius: 999px;
+      position:relative;
+      z-index:1;
     }
     .kicker code{
       font-family: var(--mono);
@@ -132,56 +173,56 @@
     }
     h1{
       margin:14px 0 10px;
-      font-size: clamp(32px, 4.5vw, 48px);
+      font-size: clamp(34px, 4.8vw, 52px);
       line-height:1.06;
-      letter-spacing:-.8px;
+      letter-spacing:-.9px;
+      position:relative;
+      z-index:1;
     }
     .sub{
       color: var(--muted);
       font-size: 16px;
-      line-height:1.6;
-      max-width: 60ch;
+      line-height:1.7;
+      max-width: 62ch;
       margin:0 0 18px;
+      position:relative;
+      z-index:1;
     }
     .pills{
       display:flex; gap:10px; flex-wrap:wrap;
       margin: 8px 0 22px;
+      position:relative;
+      z-index:1;
     }
     .pill{
       font-size:13px;
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.82);
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.12);
       padding:8px 12px;
       border-radius: 999px;
     }
-    .actions{display:flex; gap:12px; flex-wrap:wrap}
+    .actions{display:flex; gap:12px; flex-wrap:wrap; position:relative; z-index:1}
 
-    /* Hero right */
-    .hero-right{padding:22px}
-    .card-title{font-weight:750; letter-spacing:.2px; margin:0 0 10px}
-    .mini{
-      display:grid; gap:12px;
-    }
-    .mini .box{
+    .divider{height:1px; background: var(--line); margin:14px 0; position:relative; z-index:1}
+    .small{color:var(--muted2); font-size:12px; position:relative; z-index:1}
+
+    /* Snapshot */
+    .card-title{font-weight:820; letter-spacing:.2px; margin:0 0 10px; position:relative; z-index:1}
+    .mini{display:grid; gap:12px; position:relative; z-index:1}
+    .box{
       padding:14px 14px;
       background: rgba(255,255,255,.05);
       border: 1px solid rgba(255,255,255,.12);
       border-radius: 16px;
     }
-    .mini .label{font-size:12px; color: var(--muted2); margin-bottom:6px}
-    .mini .value{font-size:14px; color: var(--text); line-height:1.4}
-    .mini .value strong{font-weight:750}
+    .label{font-size:12px; color: var(--muted2); margin-bottom:6px}
+    .value{font-size:14px; color: var(--text); line-height:1.45}
+    .value strong{font-weight:820}
     .mono{font-family:var(--mono); font-size:12px; color: rgba(255,255,255,.78)}
-    .divider{height:1px; background: var(--line); margin:12px 0}
 
     /* Sections */
     section{padding:18px 0}
-    .grid{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap:18px;
-    }
     .section-head{
       display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
       margin: 12px 0 14px;
@@ -196,16 +237,24 @@
       color: var(--muted2);
       font-size:13px;
     }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+    }
     .card{padding:18px}
+
     .card h3{margin:0 0 8px; font-size:16px}
-    .card p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+    .card p{margin:0; color:var(--muted); line-height:1.65; font-size:14px}
+
     .meta{
       display:flex; gap:10px; flex-wrap:wrap;
       margin-top:12px;
     }
     .chip{
       font-size:12px;
-      color: rgba(255,255,255,.78);
+      color: rgba(255,255,255,.80);
       background: rgba(124,131,253,.12);
       border: 1px solid rgba(124,131,253,.25);
       padding:6px 10px;
@@ -215,11 +264,15 @@
       background: rgba(34,197,94,.10);
       border-color: rgba(34,197,94,.22);
     }
+    .chip.pink{
+      background: rgba(244,114,182,.10);
+      border-color: rgba(244,114,182,.22);
+    }
 
-    /* Skills list */
+    /* Toolkit */
     .skill-cols{
       display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
       gap:12px;
     }
     .skill{
@@ -228,19 +281,25 @@
       border: 1px solid rgba(255,255,255,.12);
       border-radius: 16px;
     }
-    .skill .t{font-weight:750; font-size:13px; margin-bottom:6px}
-    .skill .d{color: var(--muted); font-size:13px; line-height:1.5}
+    .skill .t{font-weight:820; font-size:13px; margin-bottom:6px}
+    .skill .d{color: var(--muted); font-size:13px; line-height:1.55}
 
-    /* Footer / contact */
+    /* Contact */
     .contact{
       display:flex; align-items:center; justify-content:space-between; gap:14px;
       flex-wrap:wrap;
     }
-    .small{color:var(--muted2); font-size:12px}
     footer{padding:26px 0 40px; color: var(--muted2); font-size:12px}
 
+    /* Scroll reveal */
+    .reveal{opacity:0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease}
+    .reveal.show{opacity:1; transform:none}
+
     /* Responsive */
-    @media (max-width: 920px){
+    @media (max-width: 1050px){
+      .skill-cols{grid-template-columns: 1fr 1fr}
+    }
+    @media (max-width: 940px){
       .hero{grid-template-columns:1fr; padding-top:28px}
       .skill-cols{grid-template-columns:1fr}
       .grid{grid-template-columns:1fr}
@@ -265,8 +324,8 @@
         <a href="#projects">Projects</a>
         <a href="#skills">Toolkit</a>
         <a href="#contact">Contact</a>
-        <a class="btn" href="https://github.com/parildarelif" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn primary" href="mailto:parildarelif@gmail.com"><span class="dot"></span> Email</a>
+        <a class="btn" href="https://github.com/elifparildar" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn primary" href="mailto:elif.parildar@ozu.edu.tr"><span class="dot"></span> Email</a>
       </div>
     </div>
   </div>
@@ -274,10 +333,10 @@
   <main class="wrap">
     <!-- HERO -->
     <div class="hero">
-      <div class="panel hero-left">
+      <div class="panel hero-left reveal">
         <div class="kicker">
           <span>Behavioral research + analytics</span>
-          <code>@parildarelif</code>
+          <code>@elifparildar</code>
         </div>
 
         <h1>Turning consumer behavior into measurable insights.</h1>
@@ -298,7 +357,7 @@
         <div class="actions">
           <a class="btn primary" href="#projects"><span class="dot"></span> See projects</a>
           <a class="btn" href="https://www.linkedin.com/in/elif-par%C4%B1ldar-2b7152313/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="mailto:parildarelif@gmail.com">Contact</a>
+          <a class="btn" href="mailto:elif.parildar@ozu.edu.tr">Contact</a>
         </div>
 
         <div class="divider"></div>
@@ -307,7 +366,7 @@
         </p>
       </div>
 
-      <aside class="panel hero-right">
+      <aside class="panel hero-right reveal">
         <h3 class="card-title">Snapshot</h3>
         <div class="mini">
           <div class="box">
@@ -336,7 +395,7 @@
     </div>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="reveal">
       <div class="section-head">
         <h2>About</h2>
         <p>What I do & how I work</p>
@@ -353,13 +412,13 @@
           <span class="chip">Behavioral Data Science</span>
           <span class="chip">Consumer Analytics</span>
           <span class="chip green">Experimental Design</span>
-          <span class="chip green">Research Storytelling</span>
+          <span class="chip pink">Research Storytelling</span>
         </div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects">
+    <section id="projects" class="reveal">
       <div class="section-head">
         <h2>Projects</h2>
         <p>Selected research & analytical work</p>
@@ -388,8 +447,8 @@
           </p>
           <div class="meta">
             <span class="chip">EFA</span>
-            <span class="chip">Reliability</span>
-            <span class="chip green">SPSS</span>
+            <span class="chip green">Reliability</span>
+            <span class="chip pink">SPSS</span>
           </div>
         </div>
 
@@ -401,7 +460,7 @@
           </p>
           <div class="meta">
             <span class="chip">Experiment</span>
-            <span class="chip">Behavior</span>
+            <span class="chip pink">Behavior</span>
             <span class="chip green">Analysis</span>
           </div>
         </div>
@@ -413,7 +472,7 @@
             (methods → findings → implications).
           </p>
           <div class="meta">
-            <span class="chip">Figma</span>
+            <span class="chip pink">Figma</span>
             <span class="chip green">Storytelling</span>
             <span class="chip">Clarity</span>
           </div>
@@ -422,7 +481,7 @@
     </section>
 
     <!-- SKILLS -->
-    <section id="skills">
+    <section id="skills" class="reveal">
       <div class="section-head">
         <h2>Toolkit</h2>
         <p>Tools I use for research & analytics</p>
@@ -441,11 +500,24 @@
           <div class="t">Tools</div>
           <div class="d">SPSS, Qualtrics (survey/experiment setup), Git/GitHub, Figma (research storytelling & mockups).</div>
         </div>
+        <div class="panel skill">
+          <div class="t">Certificates & Professional Training</div>
+          <div class="d">
+            <strong>Certificates:</strong><br/>
+            Data Science Math Skills — Duke University (Coursera)<br/>
+            SQL for Data Science — UC Davis (Coursera)<br/>
+            SQL Problem Solving — UC Davis (Coursera)
+            <br/><br/>
+            <strong>Ongoing:</strong><br/>
+            Data Science Specialization — Europe Coding School<br/>
+            PMP Project Management Training
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="reveal">
       <div class="section-head">
         <h2>Contact</h2>
         <p>Open to internships & collaborations</p>
@@ -454,13 +526,13 @@
       <div class="panel card">
         <div class="contact">
           <div>
-            <div style="font-weight:800; font-size:16px;">Let’s connect</div>
+            <div style="font-weight:860; font-size:16px;">Let’s connect</div>
             <div class="small">Email is the fastest way to reach me.</div>
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn primary" href="mailto:parildarelif@gmail.com"><span class="dot"></span> parildarelif@gmail.com</a>
+            <a class="btn primary" href="mailto:elif.parildar@ozu.edu.tr"><span class="dot"></span> elif.parildar@ozu.edu.tr</a>
             <a class="btn" href="https://www.linkedin.com/in/elif-par%C4%B1ldar-2b7152313/" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="btn" href="https://github.com/parildarelif" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn" href="https://github.com/elifparildar" target="_blank" rel="noreferrer">GitHub</a>
           </div>
         </div>
       </div>
@@ -468,13 +540,23 @@
 
     <footer>
       <div class="small">
-        © <span id="year"></span> Elif Parıldar • Built as a simple one-page personal site (index.html).
+        © <span id="year"></span> Elif Parıldar • Built as a one-page personal site (index.html).
       </div>
     </footer>
   </main>
 
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Simple reveal on scroll
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add("show");
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
   </script>
 </body>
 </html>
