@@ -6,6 +6,7 @@
   <meta name="description" content="Elif Parıldar — Psikoloji + Davranışsal Veri + Tüketici Karar Bilimi. Projeler, beceriler ve iletişim." />
   <title>Elif Parıldar | Psikoloji × Davranışsal Veri</title>
 
+  <!-- Open Graph -->
   <meta property="og:title" content="Elif Parıldar | Psikoloji × Davranışsal Veri" />
   <meta property="og:description" content="Tüketici karar verme, deneyler ve veriye dayalı içgörüler." />
   <meta property="og:type" content="website" />
@@ -14,110 +15,249 @@
     :root{
       --bg: #0b1020;
       --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.08);
       --text: rgba(255,255,255,.92);
       --muted: rgba(255,255,255,.70);
       --muted2: rgba(255,255,255,.55);
       --line: rgba(255,255,255,.12);
+      --accent: #7c83fd;
+      --accent2:#22c55e;
       --shadow: 0 20px 60px rgba(0,0,0,.45);
-      --radius: 20px;
+      --radius: 18px;
+      --radius2: 24px;
       --max: 1050px;
-      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
 
     *{box-sizing:border-box}
+    html,body{height:100%}
     body{
       margin:0;
-      font-family:var(--sans);
-      color:var(--text);
+      font-family: var(--sans);
+      color: var(--text);
       background:
         radial-gradient(1200px 600px at 10% 10%, rgba(124,131,253,.28), transparent 60%),
         radial-gradient(900px 500px at 85% 20%, rgba(34,197,94,.18), transparent 60%),
-        linear-gradient(180deg, #070a14 0%, var(--bg) 100%);
+        radial-gradient(900px 600px at 50% 100%, rgba(124,131,253,.14), transparent 60%),
+        linear-gradient(180deg, #070a14 0%, var(--bg) 60%, #060815 100%);
+      overflow-x:hidden;
     }
 
-    .wrap{max-width:var(--max); margin:auto; padding:24px}
     a{color:inherit; text-decoration:none}
+    a:hover{opacity:.92}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
 
+    /* Üst menü */
     .nav{
-      position:sticky; top:0;
-      background:rgba(10,12,20,.7);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--line);
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(12px);
+      background: rgba(8,10,18,.55);
+      border-bottom: 1px solid var(--line);
     }
     .nav .inner{
-      max-width:var(--max);
-      margin:auto;
-      padding:14px 24px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+      max-width:var(--max); margin:0 auto; padding:14px 24px;
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
     }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:220px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(124,131,253,1), rgba(34,197,94,.9));
+      box-shadow: 0 10px 30px rgba(124,131,253,.25);
+    }
+    .brand .name{font-weight:750; letter-spacing:.2px}
+    .brand .tag{display:block; font-size:12px; color:var(--muted2); margin-top:2px}
 
-    .brand .name{font-weight:700}
-    .brand .tag{font-size:12px; color:var(--muted2)}
-
-    .links{display:flex; gap:16px; align-items:center}
+    .links{display:flex; gap:16px; align-items:center; flex-wrap:wrap; justify-content:flex-end}
+    .links a{
+      font-size:14px; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+    }
+    .links a:hover{background: rgba(255,255,255,.06); color: var(--text)}
     .btn{
-      padding:8px 14px;
-      border-radius:12px;
-      background:rgba(255,255,255,.08);
-      border:1px solid var(--line);
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding:10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      color: var(--text);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      font-weight:650;
       font-size:14px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.2)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,131,253,.95), rgba(34,197,94,.72));
+      border-color: rgba(255,255,255,.18);
+    }
+    .btn.primary:hover{filter:saturate(1.05) brightness(1.02)}
+    .btn .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 0 0 6px rgba(255,255,255,.12);
     }
 
-    h1{font-size:42px; margin:12px 0}
-    h2{font-size:22px; margin:0}
-    p{color:var(--muted); line-height:1.6}
-
-    .panel{
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:var(--radius);
-      padding:22px;
-      margin-bottom:20px;
-    }
-
+    /* Kahraman alanı */
     .hero{
+      padding:46px 0 18px;
       display:grid;
-      grid-template-columns:1.2fr .8fr;
-      gap:24px;
-      margin-top:40px;
+      grid-template-columns: 1.2fr .8fr;
+      gap:26px;
+      align-items:stretch;
     }
+    .panel{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .hero-left{padding:28px}
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      color: var(--muted);
+      font-size:13px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line);
+      padding:8px 12px;
+      border-radius: 999px;
+    }
+    .kicker code{
+      font-family: var(--mono);
+      font-size:12px;
+      color: rgba(255,255,255,.86);
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(32px, 4.5vw, 48px);
+      line-height:1.06;
+      letter-spacing:-.8px;
+    }
+    .sub{
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.6;
+      max-width: 60ch;
+      margin:0 0 18px;
+    }
+    .pills{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin: 8px 0 22px;
+    }
+    .pill{
+      font-size:13px;
+      color: rgba(255,255,255,.78);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      padding:8px 12px;
+      border-radius: 999px;
+    }
+    .actions{display:flex; gap:12px; flex-wrap:wrap}
 
+    /* Sağ kutu */
+    .hero-right{padding:22px}
+    .card-title{font-weight:750; letter-spacing:.2px; margin:0 0 10px}
+    .mini{
+      display:grid; gap:12px;
+    }
+    .mini .box{
+      padding:14px 14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+    }
+    .mini .label{font-size:12px; color: var(--muted2); margin-bottom:6px}
+    .mini .value{font-size:14px; color: var(--text); line-height:1.4}
+    .mini .value strong{font-weight:750}
+    .mono{font-family:var(--mono); font-size:12px; color: rgba(255,255,255,.78)}
+    .divider{height:1px; background: var(--line); margin:12px 0}
+
+    /* Bölümler */
+    section{padding:18px 0}
     .grid{
       display:grid;
-      grid-template-columns:1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap:18px;
     }
-
-    .skill-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:18px;
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap:16px;
+      margin: 12px 0 14px;
     }
-
-    footer{
-      text-align:center;
-      padding:40px 0;
-      color:var(--muted2);
+    .section-head h2{
+      margin:0;
+      font-size: 20px;
+      letter-spacing:-.2px;
+    }
+    .section-head p{
+      margin:0;
+      color: var(--muted2);
       font-size:13px;
     }
+    .card{padding:18px}
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.6; font-size:14px}
+    .meta{
+      display:flex; gap:10px; flex-wrap:wrap;
+      margin-top:12px;
+    }
+    .chip{
+      font-size:12px;
+      color: rgba(255,255,255,.78);
+      background: rgba(124,131,253,.12);
+      border: 1px solid rgba(124,131,253,.25);
+      padding:6px 10px;
+      border-radius: 999px;
+    }
+    .chip.green{
+      background: rgba(34,197,94,.10);
+      border-color: rgba(34,197,94,.22);
+    }
 
-    @media(max-width:900px){
-      .hero, .grid, .skill-grid{
-        grid-template-columns:1fr;
-      }
+    /* Beceriler */
+    .skill-cols{
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap:12px;
+    }
+    .skill{
+      padding:14px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+    }
+    .skill .t{font-weight:750; font-size:13px; margin-bottom:6px}
+    .skill .d{color: var(--muted); font-size:13px; line-height:1.5}
+
+    /* Footer / iletişim */
+    .contact{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      flex-wrap:wrap;
+    }
+    .small{color:var(--muted2); font-size:12px}
+    footer{padding:26px 0 40px; color: var(--muted2); font-size:12px}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr; padding-top:28px}
+      .skill-cols{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .brand{min-width:auto}
     }
   </style>
 </head>
 
 <body>
-
   <div class="nav">
     <div class="inner">
       <div class="brand">
-        <div class="name">Elif Parıldar</div>
-        <div class="tag">Psikoloji × Davranışsal Veri × Tüketici Karar Bilimi</div>
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="name">Elif Parıldar</div>
+          <span class="tag">Psikoloji × Davranışsal Veri × Tüketici Karar Bilimi</span>
+        </div>
       </div>
 
       <div class="links">
@@ -125,111 +265,215 @@
         <a href="#projects">Projeler</a>
         <a href="#skills">Araçlar</a>
         <a href="#contact">İletişim</a>
-        <a class="btn" href="https://github.com/parildarelif" target="_blank">GitHub</a>
-        <a class="btn" href="https://www.linkedin.com/in/elif-par%C4%B1ldar-2b7152313/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://github.com/parildarelif" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn primary" href="mailto:parildarelif@gmail.com"><span class="dot"></span> E-posta</a>
       </div>
     </div>
   </div>
 
   <main class="wrap">
-
+    <!-- HERO -->
     <div class="hero">
-      <div class="panel">
+      <div class="panel hero-left">
+        <div class="kicker">
+          <span>Davranış araştırması + analitik</span>
+          <code>@parildarelif</code>
+        </div>
+
         <h1>Tüketici davranışını ölçülebilir içgörüye dönüştürüyorum.</h1>
-        <p>
-          Psikoloji öğrencisiyim. Tüketici karar verme, deneysel araştırma ve veriye dayalı analiz alanlarında çalışıyorum.
-          ANOVA, MANOVA, güvenilirlik analizleri ve veri görselleştirme süreçlerinde aktif olarak çalışıyorum.
+        <p class="sub">
+          Psikoloji öğrencisiyim; <strong>tüketici karar verme</strong>, <strong>deneysel araştırma</strong> ve
+          <strong>veriye dayalı analiz</strong> (ANOVA/MANOVA, güvenilirlik, görselleştirme) alanlarına odaklanıyorum.
+          Temiz araştırma akışları kurmayı ve sonuçları anlaşılır şekilde anlatmayı seviyorum.
         </p>
-        <p><strong>Staj fırsatlarına açığım.</strong></p>
+
+        <div class="pills">
+          <span class="pill">Seçenek Fazlalığı (Choice Overload)</span>
+          <span class="pill">Karar Yorgunluğu (Decision Fatigue)</span>
+          <span class="pill">Deney Tasarımı</span>
+          <span class="pill">SPSS • R • Python • SQL</span>
+          <span class="pill">Figma (araştırma anlatımı)</span>
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="#projects"><span class="dot"></span> Projeleri gör</a>
+          <a class="btn" href="https://www.linkedin.com/in/elif-par%C4%B1ldar-2b7152313/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="mailto:parildarelif@gmail.com">İletişime geç</a>
+        </div>
+
+        <div class="divider"></div>
+        <p class="small">
+          Şu anda <strong>araştırma, analitik veya consumer insights</strong> alanlarında staj fırsatlarına açığım.
+        </p>
       </div>
 
-      <div class="panel">
-        <h2>Özet</h2>
-        <p><strong>Odak:</strong> Tüketici karar verme & davranış bilimi</p>
-        <p><strong>Yöntemler:</strong> ANOVA, MANOVA, ölçek geliştirme</p>
-        <p><strong>Araçlar:</strong> SPSS, R, Python, SQL, Qualtrics</p>
-      </div>
+      <aside class="panel hero-right">
+        <h3 class="card-title">Özet</h3>
+        <div class="mini">
+          <div class="box">
+            <div class="label">Odak</div>
+            <div class="value">
+              Tüketici karar verme, davranış bilimi ve uygulamalı analitik.
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="label">Yöntemler</div>
+            <div class="value">
+              <strong>ANOVA/MANOVA</strong>, güvenilirlik analizi, deney akışları, görselleştirme.
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="label">Araçlar</div>
+            <div class="value">
+              SPSS • R • Python • SQL • Qualtrics • Figma
+              <div class="mono" style="margin-top:6px;">Temiz pipeline → net içgörü</div>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
 
+    <!-- ABOUT -->
     <section id="about">
-      <div class="panel">
+      <div class="section-head">
         <h2>Hakkımda</h2>
+        <p>Ne yapıyorum & nasıl çalışıyorum</p>
+      </div>
+
+      <div class="panel card">
         <p>
-          Dijital ortamlarda insanların nasıl karar verdiğini araştırıyorum.
-          Araştırma sürecini hipotezden analize, analizden net ve anlaşılır içgörü üretmeye kadar bütünsel olarak ele alıyorum.
-          Hedefim consumer analytics ve behavioral data science alanlarında uzmanlaşmak.
+          İnsanların karmaşıklık altında nasıl karar verdiğiyle—özellikle dijital alışveriş ortamlarında—ilgileniyorum.
+          Bir araştırma sorusunu <strong>hipotez</strong> → <strong>deney</strong> → <strong>analiz</strong> → <strong>anlatım</strong>
+          akışında ilerletmeyi seviyorum. Hedefim; <strong>consumer analytics</strong>, <strong>behavioral data science</strong>
+          veya <strong>decision intelligence</strong> alanlarında çalışan ekiplere katkı sağlamak.
         </p>
+        <div class="meta">
+          <span class="chip">Davranışsal Veri Bilimi</span>
+          <span class="chip">Tüketici Analitiği</span>
+          <span class="chip green">Deneysel Tasarım</span>
+          <span class="chip green">Araştırma Anlatımı</span>
+        </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
     <section id="projects">
-      <h2>Projeler</h2>
+      <div class="section-head">
+        <h2>Projeler</h2>
+        <p>Seçilmiş araştırma & analitik çalışmalar</p>
+      </div>
+
       <div class="grid">
-
-        <div class="panel">
-          <h3>Karar Yorgunluğu Projesi</h3>
+        <div class="panel card">
+          <h3>🛒 Karar Yorgunluğu (Devam Ediyor)</h3>
           <p>
-            Seçenek fazlalığının karar süresi ve memnuniyet üzerindeki etkisini inceleyen deneysel araştırma.
+            <strong>Seçenek fazlalığının</strong> karar süresi, satın alma niyeti ve karar memnuniyeti üzerindeki etkisini inceleyen deneysel çalışma.
           </p>
+          <div class="meta">
+            <span class="chip">SPSS (MANOVA/ANOVA)</span>
+            <span class="chip">R (görselleştirme)</span>
+            <span class="chip">Python (işleme)</span>
+            <span class="chip green">Qualtrics</span>
+          </div>
         </div>
 
-        <div class="panel">
-          <h3>Gaslighting Ölçeği Geliştirme</h3>
+        <div class="panel card">
+          <h3>📏 Gaslighting Ölçeği Geliştirme</h3>
           <p>
-            EFA ve güvenilirlik analizleri ile ölçek geliştirme çalışması.
+            <strong>EFA</strong> ve <strong>güvenilirlik testleri</strong> (Cronbach’s alpha) ile ölçek geliştirme çalışması;
+            ölçüm tasarımı ve yapı geçerliği adımlarına odaklanır.
           </p>
+          <div class="meta">
+            <span class="chip">EFA</span>
+            <span class="chip">Güvenilirlik</span>
+            <span class="chip green">SPSS</span>
+          </div>
         </div>
 
-        <div class="panel">
-          <h3>Dijital İkna Çalışması</h3>
+        <div class="panel card">
+          <h3>💬 Dijital İkna Çalışması</h3>
           <p>
-            Online ortamda ikna ve anlatı etkilerini inceleyen deneysel araştırma.
+            Online ortamda ikna ve anlatı etkilerini inceleyen deneysel araştırma;
+            teoriyi ölçülebilir çıktılarla ilişkilendirir.
           </p>
+          <div class="meta">
+            <span class="chip">Deney</span>
+            <span class="chip">Davranış</span>
+            <span class="chip green">Analiz</span>
+          </div>
         </div>
 
+        <div class="panel card">
+          <h3>🎨 Figma ile Araştırma Anlatımı</h3>
+          <p>
+            Araştırma akışlarını, karar yolculuklarını ve bulguları ürün odaklı ve anlaşılır bir formatta sunmak için Figma kullanımı
+            (yöntem → bulgular → çıkarımlar).
+          </p>
+          <div class="meta">
+            <span class="chip">Figma</span>
+            <span class="chip green">Storytelling</span>
+            <span class="chip">Netlik</span>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- SKILLS -->
     <section id="skills">
-      <h2>Araçlar & Yetkinlikler</h2>
-      <div class="skill-grid">
+      <div class="section-head">
+        <h2>Araçlar</h2>
+        <p>Araştırma & analitik için kullandıklarım</p>
+      </div>
 
-        <div class="panel">
-          <h3>İstatistik</h3>
-          <p>ANOVA, MANOVA, güvenilirlik analizi, deney tasarımı</p>
+      <div class="skill-cols">
+        <div class="panel skill">
+          <div class="t">İstatistik & Araştırma</div>
+          <div class="d">ANOVA, MANOVA, güvenilirlik analizi, deneysel tasarım, hipotez testleri.</div>
         </div>
-
-        <div class="panel">
-          <h3>Veri & Analiz</h3>
-          <p>SPSS, R, Python, SQL, veri temizleme ve görselleştirme</p>
+        <div class="panel skill">
+          <div class="t">Veri & Görselleştirme</div>
+          <div class="d">R ile görselleştirme ve istatistiksel akışlar; Python ile veri işleme; SQL ile sorgulama.</div>
         </div>
-
-        <div class="panel">
-          <h3>Yazılım & Araçlar</h3>
-          <p>Qualtrics, Git/GitHub, Figma (tasarım & research storytelling)</p>
+        <div class="panel skill">
+          <div class="t">Araçlar</div>
+          <div class="d">SPSS, Qualtrics (anket/deney kurulum), Git/GitHub, Figma (araştırma anlatımı & mockup).</div>
         </div>
-
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact">
-      <div class="panel">
+      <div class="section-head">
         <h2>İletişim</h2>
-        <p>E-posta: <a href="mailto:parildarelif@gmail.com">parildarelif@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/parildarelif" target="_blank">github.com/parildarelif</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/elif-par%C4%B1ldar-2b7152313/" target="_blank">LinkedIn Profilim</a></p>
+        <p>Staj & iş birliği fırsatlarına açığım</p>
+      </div>
+
+      <div class="panel card">
+        <div class="contact">
+          <div>
+            <div style="font-weight:800; font-size:16px;">Bağlantı kuralım</div>
+            <div class="small">En hızlı iletişim yolu e-posta.</div>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="btn primary" href="mailto:parildarelif@gmail.com"><span class="dot"></span> parildarelif@gmail.com</a>
+            <a class="btn" href="https://www.linkedin.com/in/elif-par%C4%B1ldar-2b7152313/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="btn" href="https://github.com/parildarelif" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <footer>
-      © <span id="year"></span> Elif Parıldar
+      <div class="small">
+        © <span id="year"></span> Elif Parıldar • Basit tek sayfalık kişisel site (index.html).
+      </div>
     </footer>
-
   </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
